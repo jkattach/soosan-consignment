@@ -126,19 +126,26 @@ body {
     <p>① 을은 위 제품을 갑에게 수탁 목적으로 발송하며, 제품의 소유권은 을에게 있다.</p>
     <p>② 갑은 제품을 선량한 관리자의 주의로 보관·관리하며, 을의 서면 동의 없이 분해·개조하거나 제3자에게 양도·대여·담보로 제공할 수 없다.</p>
 
-    <h2>제2조 [반환]</h2>
+    <h2>제2조 [수탁 기간]</h2>
+    <p>① 수탁 기간은 3개월로 한다.</p>
+    <p>② 기간을 연장할 경우 갑은 제품 사진을 촬영하여 을에게 전달하고, 본 계약서에 다시 서명한다.</p>
+
+    <h2>제3조 [재고 확인]</h2>
+    <p>을의 담당자가 요청하면 갑은 제품 사진을 촬영하여 전달한다.</p>
+
+    <h2>제4조 [반환]</h2>
     <p>갑은 을이 반환을 요청한 날로부터 7일 이내에 제품을 을(본사)로 반환하여야 한다.</p>
 
-    <h2>제3조 [운반비]</h2>
+    <h2>제5조 [운반비]</h2>
     <p>제품의 발송 및 반환에 소요되는 운반비는 을이 부담한다.</p>
 
-    <h2>제4조 [미반환]</h2>
-    <p>① 갑이 제2조의 기한 내에 제품을 반환하지 않으면, 을은 서면으로 7일의 기간을 정하여 반환을 최고할 수 있다.</p>
+    <h2>제6조 [미반환]</h2>
+    <p>① 갑이 제4조의 기한 내에 제품을 반환하지 않으면, 을은 서면으로 7일의 기간을 정하여 반환을 최고할 수 있다.</p>
     <p>② 최고 기간이 지나도 반환하지 않으면 을은 제품을 직접 회수할 수 있으며, 갑은 회수 작업에 협조하여야 한다.</p>
     <p>③ 제품이 분실·훼손되었거나 반환이 불가능한 경우, 갑은 을이 정한 제품 판매가 상당액을 배상한다.</p>
     <p>④ 미반환 중에도 제품의 소유권은 을에게 있으며, 갑이 제3자에게 처분한 경우 갑은 그 책임을 진다.</p>
 
-    <h2>제5조 [정보 비제공]</h2>
+    <h2>제7조 [정보 비제공]</h2>
     <p>① 갑은 제품을 통해 알게 된 다음 각 호의 정보를 을의 사전 서면 동의 없이 경쟁사를 포함한 제3자에게 제공하거나 공개하여서는 아니 된다.</p>
     <p class="sub">가. 제품의 핀 간 거리, 체결 치수 등 복제·모방에 활용될 수 있는 치수 정보</p>
     <p class="sub">나. 제품의 주요 부품 형상과 배치 구조를 도면·사진·동영상으로 기록하여 외부에 제공하는 행위</p>
@@ -268,7 +275,10 @@ body {
         onclone: function (doc) {
           var paper = doc.getElementById('paper');
           paper.style.width = '794px'; paper.style.maxWidth = 'none'; paper.style.minHeight = '1123px';
-          paper.style.boxShadow = 'none'; paper.style.fontSize = '12.5px'; paper.style.padding = '40px 52px';
+          paper.style.boxShadow = 'none'; paper.style.fontSize = '12.5px'; paper.style.padding = '28px 52px 20px';
+          var st = doc.createElement('style');
+          st.textContent = '#paper h1{margin:0 0 10px} #paper h2{margin:8px 0 1px} #paper p{margin:1px 0} #paper table{margin:6px 0 2px} #paper table.prod td{height:30px} #paper table.sign td{height:32px} #paper table.sign tr.sg td{height:60px} #paper .sigbox{height:60px} #paper .end{margin-top:8px} #paper .logo{padding-top:12px} #paper table.sign td.in{background:transparent}';
+          doc.head.appendChild(st);
           doc.querySelectorAll('#paper input').forEach(function (i) {
             var s = doc.createElement('span'); s.className = 'val'; s.textContent = i.value; i.replaceWith(s);
           });
